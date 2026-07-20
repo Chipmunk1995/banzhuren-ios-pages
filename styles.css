@@ -1,0 +1,98 @@
+:root {
+  color-scheme: light;
+  --ink: #161816;
+  --muted: #6e736f;
+  --paper: #f5f4ef;
+  --card: #ffffff;
+  --line: #dedfd9;
+  --green: #285c48;
+  --green-soft: #dceae3;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Helvetica Neue", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--paper); }
+a { color: inherit; }
+
+.site-header,
+footer {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-header { min-height: 76px; border-bottom: 1px solid var(--line); }
+.brand { font-size: 18px; font-weight: 720; text-decoration: none; letter-spacing: -.02em; }
+nav { display: flex; gap: 22px; }
+nav a { color: var(--muted); font-size: 14px; text-decoration: none; }
+nav a[aria-current="page"], nav a:hover { color: var(--ink); }
+
+main { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+.hero { padding: 118px 0 105px; max-width: 850px; }
+.eyebrow { margin: 0 0 20px; color: var(--green); font-size: 12px; font-weight: 760; letter-spacing: .16em; }
+h1 { margin: 0; font-size: clamp(48px, 7vw, 84px); line-height: 1.04; letter-spacing: -.065em; }
+.lead { max-width: 720px; margin: 28px 0 0; color: var(--muted); font-size: 19px; line-height: 1.8; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 38px; }
+.button { padding: 14px 20px; border-radius: 999px; text-decoration: none; font-weight: 650; }
+.button.primary { color: #fff; background: var(--green); }
+.button.secondary { border: 1px solid var(--line); background: rgba(255,255,255,.56); }
+
+.fact-grid,
+.support-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; padding-bottom: 110px; }
+.fact-grid article,
+.support-grid article,
+.requirements,
+.summary { border: 1px solid var(--line); border-radius: 24px; background: var(--card); }
+.fact-grid article { min-height: 165px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; }
+.fact-grid span { color: var(--muted); font-size: 13px; }
+.fact-grid strong { font-size: 23px; letter-spacing: -.025em; }
+
+.policy-layout { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 72px; padding: 88px 0 120px; }
+.policy-meta { position: sticky; top: 24px; align-self: start; }
+.policy-meta h1 { font-size: 52px; }
+.policy-meta dl { margin: 42px 0 0; }
+.policy-meta dl div { padding: 14px 0; border-top: 1px solid var(--line); }
+.policy-meta dt { color: var(--muted); font-size: 12px; }
+.policy-meta dd { margin: 7px 0 0; font-weight: 650; }
+.policy-content { min-width: 0; }
+.policy-content section { padding: 34px 0; border-bottom: 1px solid var(--line); }
+.policy-content .summary { padding: 28px; border-bottom: 1px solid var(--line); }
+.summary strong { font-size: 20px; }
+.policy-content h2,
+.support-grid h2,
+.requirements h2 { margin: 0 0 16px; font-size: 25px; letter-spacing: -.035em; }
+.policy-content p,
+.policy-content li,
+.support-grid p,
+.requirements p { color: #4f5551; font-size: 16px; line-height: 1.85; }
+.policy-content ul { padding-left: 22px; }
+
+.support-page { padding: 90px 0 120px; }
+.support-hero { max-width: 800px; padding-bottom: 72px; }
+.support-hero h1 { font-size: clamp(52px, 7vw, 78px); }
+.support-grid { padding-bottom: 36px; }
+.support-grid article { min-height: 250px; padding: 30px; }
+.support-grid article > span { color: var(--green); font-size: 12px; font-weight: 750; letter-spacing: .14em; }
+.support-grid h2 { margin-top: 48px; }
+.requirements { padding: 34px; }
+
+footer { min-height: 96px; color: var(--muted); border-top: 1px solid var(--line); font-size: 13px; }
+footer a { text-decoration: none; }
+
+@media (max-width: 760px) {
+  .site-header, footer, main { width: min(100% - 28px, 1120px); }
+  .site-header { min-height: 66px; }
+  nav { gap: 14px; }
+  .hero { padding: 78px 0 72px; }
+  h1 { font-size: 48px; }
+  .lead { font-size: 17px; }
+  .fact-grid, .support-grid { grid-template-columns: 1fr; }
+  .fact-grid { padding-bottom: 72px; }
+  .policy-layout { grid-template-columns: 1fr; gap: 28px; padding-top: 60px; }
+  .policy-meta { position: static; }
+  .policy-meta h1 { font-size: 46px; }
+  .policy-meta dl { margin-top: 28px; }
+  .support-page { padding-top: 62px; }
+}
